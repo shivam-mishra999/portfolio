@@ -103,6 +103,9 @@
     overflow: hidden;
     height: 410px;
   }
+  .expandedMobile {
+    height: 505px;
+  }
 
   .imageContainer {
     margin-bottom: 10px;

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ProjectCard.module.css";
 
 export default function ProjectCard({
   project: { title, imageSrc, description, skills, demo, source },
+  isActive = true,
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const maxLength = 95;
@@ -12,8 +13,17 @@ export default function ProjectCard({
     ? description
     : `${description.slice(0, maxLength)}...`;
 
+    useEffect(() => {
+      if (!isActive) {
+        setIsExpanded(false);
+      }
+    }, [isActive]);
+
   return (
-    <div className={styles.container}>
+    // <div className={styles.container}>
+    <div
+      className={`${styles.container} ${isExpanded ? styles.expandedMobile : ''}`}
+    >
       <div className={styles.imageContainer}>
         <img
           src={imageSrc}

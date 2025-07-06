@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 
 export const Projects = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0); 
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,6 +38,7 @@ export const Projects = () => {
             spaceBetween={20}
             slidesPerView={1}
             pagination={{ clickable: true }}
+            onSlideChange={(swiper) => setActiveSlideIndex(swiper.activeIndex)}
             style={{
               "--swiper-pagination-color": "#00FFFF",
               "--swiper-pagination-bullet-inactive-color": "#999999",
@@ -47,7 +49,7 @@ export const Projects = () => {
           >
             {projects.map((project, id) => (
               <SwiperSlide key={id}>
-                <ProjectCard project={project} />
+                <ProjectCard project={project} isActive={activeSlideIndex === id} />
               </SwiperSlide>
             ))}
           </Swiper>
