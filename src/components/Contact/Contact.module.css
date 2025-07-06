@@ -1,0 +1,119 @@
+@import "../../vars.css";
+
+.container {
+  color: #23605c;
+  margin-top: 120px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 58px 10%;
+  gap: 10px;
+}
+
+.text h2 {
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.text p {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.aboutImage {
+  width: 200px;
+  height: 100px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  gap: 26px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.iconContainer {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #23605c;
+}
+.link img {
+  width: 40px;
+  height: 40px;
+}
+
+.link a {
+  color: #23605c;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px;
+    gap: 10px;
+    margin-top: 40px;
+  }
+
+  .text h2 {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .text p {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .aboutImage {
+    width: 150px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .links {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .link {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .link a {
+    font-size: 14px;
+    word-break: break-word;
+    max-width: 100%;
+  }
+
+  .iconContainer {
+    width: 40px;
+    height: 40px;
+  }
+
+  .link img {
+    width: 20px;
+    height: 20px;
+  }
+}

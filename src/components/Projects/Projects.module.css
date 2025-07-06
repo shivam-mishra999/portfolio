@@ -1,0 +1,68 @@
+@import "../../vars.css";
+
+/* ------------------ Desktop View ------------------ */
+.container {
+  margin-top: 76px;
+  color: var(--color-text);
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: rgba(12, 12, 12, 0.6);
+  border-radius: 15px;
+  padding: 40px;
+}
+
+.title {
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+}
+
+.projectsWrapper {
+  margin-top: 37px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+/* ------------------ Mobile View ------------------ */
+@media screen and (max-width: 830px) {
+  .container {
+    color: var(--color-text);
+    margin: 20px 10px;
+    padding: 20px 10px;
+    background-color: rgba(12, 12, 12, 0.6);
+    border-radius: 15px;
+  }
+
+  .title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .projectsWrapper {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  /* Swiper handles layout for mobile, so remove old horizontal scroll */
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+

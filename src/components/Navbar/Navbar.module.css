@@ -1,0 +1,106 @@
+@import "../../vars.css";
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  z-index: 2;
+  margin: 0 10%;
+  background-color: black;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(236, 232, 232, 0.3);
+}
+.title {
+  font-size: 24px;
+  font-weight: 900;
+  text-decoration: none;
+  color: rgb(5, 5, 66);
+  display: inline-block;
+  background: linear-gradient(to right, purple, white);
+  padding: 6px 30px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(239, 235, 235, 0.3);
+}
+.menu {
+  display: flex;
+}
+.menuItems {
+  display: flex;
+  flex-direction: row;
+  gap: 37px;
+  list-style: none;
+}
+.menuItems a {
+  color: var(--color-text);
+  font-size: 20px;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+.menuItems a:hover {
+  background-color: rgb(137, 44, 137);
+  border-radius: 100px;
+
+}
+.hamburger {
+  display: none;
+}
+
+
+@media screen and (max-width: 830px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 0;
+    border-radius: 0;
+  }
+  .title {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(5, 5, 66);
+    display: inline-block;
+    background: linear-gradient(to right, purple, white);
+    padding: 10px 30px;
+  }
+  .menu {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 11px;
+    z-index: 3;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  .menuItems {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+    background: linear-gradient(
+      90deg,
+      rgb(21, 1, 22),
+      rgb(95, 28, 107)
+    );
+    padding: 24px 30px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    border-bottom-left-radius: 10px;
+  }
+  .menuOpens {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    display: flex;
+    z-index: 1;
+  }
+  .menuItems a {
+    color: var(--color-text);
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 20px;
+  }
+}

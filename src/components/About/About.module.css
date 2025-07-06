@@ -1,0 +1,140 @@
+@import '../../vars.css';
+
+.container {
+  position: relative;
+  background-color: rgba(12, 12, 12, 0.6);
+  border-radius: 15px;
+  padding: 40px;
+  margin-top: 129px;
+  z-index: 1;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.title {
+  color: var(--color-text);
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.aboutImage {
+  width: 35%;
+}
+.aboutItems {
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.aboutItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  border-radius: 20px;
+  list-style: none;
+  padding: 25px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(165, 215, 232, 0.42) 0%,
+    rgba(255, 255, 255, 0)100%
+  );
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: 0.4s;
+  background-color: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(236, 232, 232, 0.3);
+}
+.aboutItemText {
+  max-width: 550px;
+  height: auto;
+  /* background-color: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 20px; */
+}
+.aboutItem:hover {
+  background-size: 100% 100%;
+}
+.aboutItem h3 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.aboutItem p {
+  font-size: 18px;
+  line-height: 25px;
+}
+.imageContainer {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@media screen and (max-width: 830px) {
+  .container {
+    margin: 40px 10px;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .aboutImage {
+    width: 50%;
+  }
+
+  .aboutItems {
+    gap: 30px;
+    width: 100%;
+  }
+
+  .aboutItem {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 8px 20px 8px;
+    gap: 10px;
+  }
+
+  .aboutItemText {
+    max-width: 100%;
+  }
+
+  .imageContainer {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+  }
+
+  .aboutItem h3 {
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .aboutItem p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
