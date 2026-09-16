@@ -331,9 +331,6 @@ function Projects() {
                         <span>{project.linkLabel}</span>
                       </button>
                     )}
-                    <span className="text-xs text-gray-500 font-medium">
-                      {project.url ? 'Live Production Link' : 'Live URL available on request'}
-                    </span>
                   </div>
                 </div>
               </div>
