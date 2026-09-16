@@ -1,4 +1,4 @@
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Code2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 function Navigation() {
@@ -16,9 +16,11 @@ function Navigation() {
   const navItems = [
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
-    { name: 'YouTube', href: '#youtube' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Education', href: '#education' },
+    { name: 'Achievements', href: '#achievements' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -31,23 +33,35 @@ function Navigation() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+        isScrolled
+          ? 'bg-white/90 backdrop-blur-md shadow-md py-3'
+          : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center">
           <a
             href="#hero"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('#hero');
             }}
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
+            className="flex items-center gap-2 group"
           >
-            Portfolio
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-200">
+              <Code2 size={22} />
+            </div>
+            <div>
+              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent block leading-tight">
+                Shivam Mishra
+              </span>
+              <span className="text-xs text-gray-500 font-medium tracking-wide block">
+                React Native & React Developer
+              </span>
+            </div>
           </a>
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex space-x-6">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -56,10 +70,10 @@ function Navigation() {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className={`transition-colors duration-200 ${
+                className={`text-sm font-bold transition-all duration-200 hover:scale-105 ${
                   isScrolled
-                    ? 'text-gray-700 hover:text-blue-600'
-                    : 'text-gray-800 hover:text-blue-600'
+                    ? 'text-gray-800 hover:text-blue-600'
+                    : 'text-gray-900 hover:text-blue-600'
                 }`}
               >
                 {item.name}
@@ -68,7 +82,7 @@ function Navigation() {
           </div>
 
           <button
-            className="md:hidden p-2"
+            className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -78,8 +92,8 @@ function Navigation() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white border-t">
-          <div className="px-4 pt-2 pb-4 space-y-2">
+        <div className="lg:hidden bg-white/95 backdrop-blur-md border-b shadow-lg animate-fade-in">
+          <div className="px-4 pt-3 pb-5 space-y-2">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -88,7 +102,7 @@ function Navigation() {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
+                className="block px-4 py-2.5 text-base font-bold text-gray-800 hover:text-blue-600 hover:bg-blue-50/80 rounded-lg transition-colors duration-150"
               >
                 {item.name}
               </a>
